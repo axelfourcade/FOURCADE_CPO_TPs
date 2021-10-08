@@ -1,6 +1,6 @@
 /**
  * TP1 exercice 1
- * Axel FOURCADE
+ * Axel FOURCADE , Noa LEGIER
  * 07/10/2021
  */
 package tp1.exo3;
@@ -30,7 +30,7 @@ public class TP1Exo3 {
     System.out.println("Voici 5 nombres aléatoires : " + n1 + " ; " + n2 + " ; " + n3 + " ; " + n4 + " ; " + n5);
 
     int dif = 0;
-    System.out.println("Veuillez choisir la difficulté : \n1) Facile \n2) Normale \n3) Difficile");
+    System.out.println("Veuillez choisir la difficulté : \n1) Facile \n2) Normale \n3) Difficile \n4) Cauchemar");
     Scanner sc = new Scanner(System.in);
     dif = sc.nextInt();
     
@@ -90,7 +90,7 @@ public class TP1Exo3 {
     System.out.println("\nVous avez réussi en " + cpt + " tentatives");
     }
     
-    else{
+    else if (dif == 3){
     
     int n = generateurAleat.nextInt(100);
     int rep = 101;
@@ -126,5 +126,51 @@ public class TP1Exo3 {
     }
     
     }
+    else {
+            
+    int n = generateurAleat.nextInt(100);
+    int rep = 101;
+    int cpt = 0;
+
+    System.out.println("\nVous rentrez dans le mode cauchemar, l'ordinateur à 30 % de chance de vous donner de mauvaises indications ");
+    
+    while (rep != n) {
+        
+        
+        System.out.println("\nSaisissez un nombre entre 0 et 100 : ");
+        rep = sc.nextInt();
+        
+        cpt += 1;
+        
+        int alea = generateurAleat.nextInt(10);
+        
+        if (rep < n){
+            
+            if (alea >= 3){
+            System.out.println("\ntrop petit");
+            }
+            else{
+            System.out.println("\ntrop grand");    
+            }
+            
+        }
+        else if (rep > n){
+            
+            if (alea >= 3){
+            System.out.println("\ntrop grand");
+            }
+            else {
+            System.out.println("\ntrop petit");   
+            }
+        }
+        else{
+            System.out.println("\ngagné");
+        }
+    }
+    
+    System.out.println("\nVous avez réussi en " + cpt + " tentatives");
+        
+        
+            }
     }
 }
