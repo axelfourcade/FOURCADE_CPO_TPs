@@ -42,7 +42,6 @@ public class TP14Statistiques {
         System.out.println("Nous avons obtenu " + t[i-1] + "% de " + i);
     }
     
-   
         
     }
     
