@@ -1,6 +1,6 @@
 /*
  * TP1 exercice 1
- * Axel FOURCADE
+ * Axel FOURCADE , Noa LEGIER
  * 04/10/2021
  */
 package tp1.exo1;
