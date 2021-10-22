@@ -15,7 +15,27 @@ public class TP2_bieres_FOURCADE_LEGIER {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+//BouteilleBiere uneBiere = new BouteilleBiere() ;
+
+//uneBiere.nom = "Cuvée des trolls";
+//uneBiere.degreAlcool = 7.0 ;
+//uneBiere.brasserie = "Dubuisson";
+//uneBiere.ouverte = false;
+
+BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des trolls", 
+7.0 ,"Dubuisson") ;
+
+uneBiere.lireEtiquette();
+
+BouteilleBiere autreBiere = new BouteilleBiere("Leffe", 6.6 
+,"Abbaye de Leffe") ;
+
+autreBiere.lireEtiquette();
+
+
+
+
     }
     
 }
