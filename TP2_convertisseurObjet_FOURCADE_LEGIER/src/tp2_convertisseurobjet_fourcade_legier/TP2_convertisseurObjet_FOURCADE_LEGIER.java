@@ -61,8 +61,7 @@ public class TP2_convertisseurObjet_FOURCADE_LEGIER {
         }
         else{
         System.out.println("error");
-        }
-        
+        }        
         }
         
         
