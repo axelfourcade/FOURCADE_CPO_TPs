@@ -11,4 +11,9 @@ package tp2_manip_fourcade_legier;
  */
 public class Moussaka {
     
+    int nbCalories;
+    
+    public Moussaka (int Cal){
+        nbCalories = Cal;
+    }
 }

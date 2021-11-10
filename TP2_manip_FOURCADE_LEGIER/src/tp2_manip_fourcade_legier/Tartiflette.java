@@ -11,4 +11,9 @@ package tp2_manip_fourcade_legier;
  */
 public class Tartiflette {
     
+    int nbCalories;
+    
+    public Tartiflette (int Cal){
+        nbCalories = Cal;
+    }
 }
