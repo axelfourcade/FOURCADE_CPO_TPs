@@ -11,4 +11,25 @@ package tp2_relation_1_fourcade_legier;
  */
 public class Voiture {
     
+    String Modele;
+    String Marque;
+    int PuissanceCV;
+    Personne Proprietaire;
+    
+    public Voiture (String modele , String marque , int puissanceCV){
+        
+        Modele = modele;
+        Marque = marque;
+        PuissanceCV = puissanceCV;
+        Proprietaire = null;
+    }
+    
+    @Override
+    public String toString() {
+    
+    String chaine_a_retourner;
+    chaine_a_retourner = Marque + " " + Modele + " de " + PuissanceCV + " CV"; 
+    
+    return chaine_a_retourner ;
+    }   
 }
