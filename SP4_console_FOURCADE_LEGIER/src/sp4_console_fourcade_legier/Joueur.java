@@ -14,8 +14,8 @@ public class Joueur {
  String Nom ;
  String Couleur ;
  Jeton [] ListeJetons  = new Jeton [21];
- int nombreJetonsRestants ;
- int nombreDesintegrateurs;
+ int nombreJetonsRestants = 0;
+ int nombreDesintegrateurs = 0;
  
  public Joueur (String nom){
      Nom = nom ;
@@ -27,22 +27,36 @@ public class Joueur {
     
 public boolean ajouterJeton (Jeton jeton){
     
-    for (int i=0;i<=21;i++){
+    for (int i=0;i<=20;i++){
         
-        if (i==21){
-            return false;
+        if (ListeJetons [i] == null){
+            ListeJetons [i] = jeton ;    
+            nombreJetonsRestants += 1 ;
+            return true; 
         }
-        else if (ListeJetons [i] == null){
-            ListeJetons [i] = jeton ;
-            return true;   
-        }
-        
     }
-    nombreJetonsRestants += 1 ;
-}    
+     return false;
+     
+}       
     
-public 
-    
-    
-    
+
+public void obtenirDesintegrateur(){
+   nombreDesintegrateurs += 1 ; 
+}
+
+
+public boolean utiliserDesintegrateur() {
+    if (nombreDesintegrateurs== 0){
+       return false ;
+    }
+    else {
+        nombreDesintegrateurs -= 1 ;
+        return true;  
+    }       
+}
+
+
+
+
+
 }
