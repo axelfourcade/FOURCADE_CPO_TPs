@@ -11,8 +11,14 @@ package sp4_console_fourcade_legier;
  */
 public class Jeton {
     
+    String Couleur;
     
+    public Jeton (String couleur){
+        Couleur = couleur;
+    }
     
+    public String lireCouleur(){
+        return Couleur;
+    }
     
-    
-}
+    }
