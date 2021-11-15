@@ -86,6 +86,17 @@ public class Grille {
         return false;   
     }
     
+    public String lireCouleurDuJeton (int ligne , int colonne){
+        return CellulesJeu[ligne][colonne].jetonCourant.lireCouleur();
+    }
+
+            
+    
+    
+    
+    
+    
     
     
 }
+
