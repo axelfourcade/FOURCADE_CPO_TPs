@@ -10,6 +10,9 @@ package sp4_console_fourcade_legier;
  * @author Axel
  */
 public class Cellule {
+
+    
+    
     
 Jeton jetonCourant;
 boolean trouNoir;
@@ -23,7 +26,7 @@ public Cellule(){
     
 public boolean affecterJeton(Jeton jeton){
     if (jetonCourant ==null){
-        Cellule Jeton;
+        jetonCourant = jeton;
         return true ;
     }
     else {
@@ -31,13 +34,51 @@ public boolean affecterJeton(Jeton jeton){
     }
 }    
     
-public recupererJeton(){
-    
+public Jeton recupererJeton(){
+    return jetonCourant;
 }    
     
+public boolean supprimerJeton(){
+    if (jetonCourant !=null){
+        jetonCourant =null;
+        return true;
+    }
+    else {
+        return false ;
+    }
+}
     
+public boolean placerTrouNoir(){
+    if (trouNoir == false){
+        trouNoir = true;
+        return true ;
+    }
+    else {
+        return false;
+    }
+}
     
-    
-    
-    
+
+public boolean placerDesintegrateur(){
+    if (desintegrateur == false){
+        desintegrateur = true;
+        return true ;
+    }
+    else {
+        return false;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
