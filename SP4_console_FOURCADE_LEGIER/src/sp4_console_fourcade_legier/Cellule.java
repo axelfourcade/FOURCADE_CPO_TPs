@@ -70,7 +70,13 @@ public boolean placerDesintegrateur(){
 }
 
 
-
+public String lireCouleurDuJeton(){
+    if (jetonCourant !=null){
+        return jetonCourant.Couleur;
+    }
+    else
+        return "vide";
+}
 
 
 
