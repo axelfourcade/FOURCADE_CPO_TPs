@@ -74,16 +74,16 @@ public class Grille {
                     System.out.println("J");
             }
         }
-    }    
+    }
+    }
        
     
-    public boolean celluleOccupee (int ligne, int colonne){
-        if (CellulesJeu[ligne][colonne]!=null){
+    public boolean celluleOccupee(int ligne , int colonne){
+
+        if(CellulesJeu[ligne][colonne].jetonCourant !=null){
             return true;
         }
-        else {
-            return false;
-        }
+        return false;   
     }
     
     
