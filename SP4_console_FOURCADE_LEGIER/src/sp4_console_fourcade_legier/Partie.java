@@ -34,8 +34,8 @@ public class Partie {
         for (int i=1;i<=21;i++){
             Jeton jeton1 = new Jeton(ListeJoueurs[0].Couleur);
             ListeJoueurs[0].ajouterJeton(jeton1);
-            Jeton jeton2 = new Jeton(ListeJoueurs[0].Couleur);
-            ListeJoueurs[0].ajouterJeton(jeton2);
+            Jeton jeton2 = new Jeton(ListeJoueurs[1].Couleur);
+            ListeJoueurs[1].ajouterJeton(jeton2);
         }
         
     }
