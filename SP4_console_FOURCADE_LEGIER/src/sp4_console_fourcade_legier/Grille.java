@@ -27,7 +27,8 @@ public class Grille {
                 CellulesJeu[i][colonne].jetonCourant = jeton;
                 return true;
             }
-        }
+        }            
+
         return false;
     }
     
@@ -124,9 +125,42 @@ public class Grille {
  }
     
 
+public boolean colonneRemplie(int colonne){
+   if(celluleOccupee(0,colonne)==true){
+       return true ;
+   }
+   
+   return false;
+}    
+ 
+
+public boolean placerDesintegrateur(int ligne,int colonne){
+     if(CellulesJeu[ligne][colonne].desintegrateur!=true){
+         return true ;
+     }
+     return false;
+ }
+
+
+
+ public boolean placerTrouNoir(int ligne, int colonne){
+     if(CellulesJeu[ligne][colonne].trouNoir!=true){
+         return true ;
+     }
+     return false;
+  
+ }
+
+public boolean supprimerJeton (int ligne,int colonne){
+    if(CellulesJeu[ligne][colonne].jetonCourant != null){
+        CellulesJeu[ligne][colonne].jetonCourant = null;
+        return true;            
+    }
+    return false ;
+
+    }    
     
     
-    
-    
+   
 }
 
