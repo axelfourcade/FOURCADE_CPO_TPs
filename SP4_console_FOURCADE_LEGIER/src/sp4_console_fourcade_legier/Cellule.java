@@ -70,6 +70,14 @@ public boolean placerDesintegrateur(){
 }
 
 
+
+
+
+
+
+
+
+
 public String lireCouleurDuJeton(){
     if (jetonCourant !=null){
         return jetonCourant.lireCouleur();
