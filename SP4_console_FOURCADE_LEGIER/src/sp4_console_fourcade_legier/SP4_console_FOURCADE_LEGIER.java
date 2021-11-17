@@ -27,6 +27,16 @@ g.afficherGrilleSurConsole();
 g.ajouterJetonDansColonne(j,6);
 g.afficherGrilleSurConsole();
 
+Jeton j2 = new Jeton ("jaune");
+g.ajouterJetonDansColonne(j2,1);
+g.afficherGrilleSurConsole();
+
+g.ajouterJetonDansColonne(j,6);
+g.ajouterJetonDansColonne(j,6);
+g.ajouterJetonDansColonne(j,6);
+
+g.afficherGrilleSurConsole();
+
     }
     
 }

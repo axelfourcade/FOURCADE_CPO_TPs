@@ -1,5 +1,7 @@
 package sp4_console_fourcade_legier;
 
+import java.util.Scanner;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -37,8 +39,31 @@ public class Partie {
             Jeton jeton2 = new Jeton(ListeJoueurs[1].Couleur);
             ListeJoueurs[1].ajouterJeton(jeton2);
         }
-        
     }
     
+    
+    public void debuterPartie(){
+       
+        Scanner sc = new Scanner(System.in);
+        int colonne;
+        
+        while(grilleJeu.etreRemplie()== false || grilleJeu.etreGagnantPourJoueur(joueurCourant)) {
+            grilleJeu.afficherGrilleSurConsole();
+            System.out.println("Saisissez la colonne :");
+            colonne = sc.nextInt();
+            
+            while(colonne<1 || colonne >7 ||grilleJeu.colonneRemplie(colonne)==true){
+            System.out.println("Saisissez la colonne :");
+            colonne = sc.nextInt();
+            
+            }
+            
+        }
+        
+        
+        
+        
+        
+    }      
     
 }
