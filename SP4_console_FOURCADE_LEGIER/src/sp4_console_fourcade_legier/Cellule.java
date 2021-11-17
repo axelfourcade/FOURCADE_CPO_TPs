@@ -70,13 +70,23 @@ public boolean placerDesintegrateur(){
 }
 
 
+public boolean presenceTrouNoir(){
+
+    if (trouNoir == true){
+        return true;
+    }
+    return false ;
 
 
+}
 
-
-
-
-
+public boolean presenceDesintegrateur(){
+   if (desintegrateur == true){
+        return true;
+    }
+    return false ;
+ 
+}
 
 public String lireCouleurDuJeton(){
     if (jetonCourant !=null){
@@ -85,14 +95,23 @@ public String lireCouleurDuJeton(){
     else
         return "vide";
 }
+   
+    
+    
+public boolean recupererDesintegrateur(){
+    if(presenceDesintegrateur()==true) {
+        jetonCourant = null ;
+        return true;
+    }
+    return false;
+}
 
-
-
-
-
-
-
-
-
+public boolean activerTrouNoir(){
+    if(presenceTrouNoir()==true){
+       trouNoir = false ;
+       supprimerJeton();
+    }
+    return false ;
+}
 
 }

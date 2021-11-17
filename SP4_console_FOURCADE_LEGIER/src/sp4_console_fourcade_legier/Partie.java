@@ -11,7 +11,7 @@ package sp4_console_fourcade_legier;
  */
 public class Partie {
     
-    
+    Joeur
     
     
     
