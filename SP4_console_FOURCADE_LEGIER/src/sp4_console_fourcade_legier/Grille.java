@@ -91,7 +91,37 @@ public class Grille {
     }
 
             
-    
+    public boolean etreGagnantPourJoueur( Joueur joueur) {
+        for(int i =0;i<=5;i++){
+            for(int j =0;j<= 6;j++){
+             
+               if (  (j<=3) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j+1))) && joueur.Couleur.equals(lireCouleurDuJeton(i,j+2)) && joueur.Couleur.equals(lireCouleurDuJeton(i,j+3))     ){
+                   System.out.println("Colonne x4");
+                   return true ;
+               }
+               if (  (j<=3)&&(i<=2) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i+1,j+1))) && joueur.Couleur.equals(lireCouleurDuJeton(i+2,j+2)) && joueur.Couleur.equals(lireCouleurDuJeton(i+3,j+3))     ){
+                   System.out.println("Colonne x4");
+                   return true ;
+               }
+               if (  (i<=2) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i+1,j))) && joueur.Couleur.equals(lireCouleurDuJeton(i+2,j)) && joueur.Couleur.equals(lireCouleurDuJeton(i+3,j))     ){
+                   System.out.println("Colonne x4");
+                   return true ;}
+               if (  (j>=3)&&(i<+2) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i-1,j+1))) && joueur.Couleur.equals(lireCouleurDuJeton(i-2,j+2)) && joueur.Couleur.equals(lireCouleurDuJeton(i-3,j+3))     ){
+                   System.out.println("Colonne x4");
+                   return true ;
+               }
+             }
+        }
+        return false ;
+
+}
+   
+ public void tasserGrille(int colonne,int ligne)  {
+     for(int i =0;i>=ligne ;i++) {
+         CellulesJeu[i][colonne].jetonCourant = CellulesJeu[i+1][colonne].jetonCourant;
+     }
+     
+ }
     
     
     
