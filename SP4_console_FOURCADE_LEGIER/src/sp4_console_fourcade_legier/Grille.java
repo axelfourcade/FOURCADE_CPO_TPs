@@ -24,8 +24,8 @@ public class Grille {
     public boolean ajouterJetonDansColonne(Jeton jeton,int colonne) {
         
         for (int i = 5; i >=0 ; i--){
-            if (CellulesJeu[i][colonne].jetonCourant == null){
-                CellulesJeu[i][colonne].jetonCourant = jeton;
+            if (CellulesJeu[i][colonne-1].jetonCourant == null){
+                CellulesJeu[i][colonne-1].jetonCourant = jeton;
                 return true;
             }
         }            
@@ -88,14 +88,14 @@ public class Grille {
     
     public boolean celluleOccupee(int ligne , int colonne){
 
-        if(CellulesJeu[ligne][colonne].jetonCourant !=null){
+        if(CellulesJeu[ligne-1][colonne-1].jetonCourant !=null){
             return true;
         }
         return false;   
     }
     
     public String lireCouleurDuJeton (int ligne , int colonne){
-        return CellulesJeu[ligne][colonne].jetonCourant.lireCouleur();
+        return CellulesJeu[ligne-1][colonne-1].jetonCourant.lireCouleur();
     }
 
             
@@ -125,8 +125,8 @@ public class Grille {
 }
    
  public void tasserGrille(int colonne,int ligne)  {
-     for(int i =0;i>=ligne ;i++) {
-         CellulesJeu[i][colonne].jetonCourant = CellulesJeu[i+1][colonne].jetonCourant;
+     for(int i =0;i>=ligne-1 ;i++) {
+         CellulesJeu[i][colonne-1].jetonCourant = CellulesJeu[i+1][colonne-1].jetonCourant;
      }
      
  }
@@ -142,7 +142,7 @@ public boolean colonneRemplie(int colonne){
  
 
 public boolean placerDesintegrateur(int ligne,int colonne){
-     if(CellulesJeu[ligne][colonne].desintegrateur!=true){
+     if(CellulesJeu[ligne-1][colonne-1].desintegrateur!=true){
          return true ;
      }
      return false;
@@ -151,7 +151,7 @@ public boolean placerDesintegrateur(int ligne,int colonne){
 
 
  public boolean placerTrouNoir(int ligne, int colonne){
-     if(CellulesJeu[ligne][colonne].trouNoir!=true){
+     if(CellulesJeu[ligne-1][colonne-1].trouNoir!=true){
          return true ;
      }
      return false;
@@ -159,8 +159,8 @@ public boolean placerDesintegrateur(int ligne,int colonne){
  }
 
 public boolean supprimerJeton (int ligne,int colonne){
-    if(CellulesJeu[ligne][colonne].jetonCourant != null){
-        CellulesJeu[ligne][colonne].jetonCourant = null;
+    if(CellulesJeu[ligne-1][colonne-1].jetonCourant != null){
+        CellulesJeu[ligne-1][colonne-1].jetonCourant = null;
         return true;            
     }
     return false ;

@@ -24,7 +24,7 @@ c.affecterJeton(j);
 System.out.println(c.lireCouleurDuJeton());
 Grille g = new Grille();
 g.afficherGrilleSurConsole();
-g.ajouterJetonDansColonne(j,2);
+g.ajouterJetonDansColonne(j,6);
 g.afficherGrilleSurConsole();
 
     }
