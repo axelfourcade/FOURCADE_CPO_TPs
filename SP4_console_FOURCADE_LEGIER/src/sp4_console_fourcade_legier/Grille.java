@@ -11,6 +11,7 @@ package sp4_console_fourcade_legier;
 public class Grille {
 
     Cellule[][] CellulesJeu= new Cellule[6][7];
+    Cellule[][] CellulesAff= new Cellule[6][7];
     
     public Grille(){
        for(int i =0;i<=5;i++){
@@ -63,19 +64,25 @@ public class Grille {
     
     public void afficherGrilleSurConsole() {
         for(int i =0;i<=5;i++){
+            
+           System.out.println("");
+            
             for(int j =0;j<= 6;j++){
                 
                 if (CellulesJeu[i][j].jetonCourant == null){
-                    System.out.println(" ");
+                    System.out.print("x  ");
                 }
                 if ("rouge".equals(CellulesJeu[i][j].lireCouleurDuJeton())){
-                    System.out.println("R");
+                    System.out.print("R  ");
                 }
                 if ("jaune".equals(CellulesJeu[i][j].lireCouleurDuJeton())){
-                    System.out.println("J");
-            }
+                    System.out.print("J  ");
+            }   
+            }     
+            System.out.print(i+1);
         }
-    }
+        System.out.println("\n1  2  3  4  5  6  7");
+        System.out.println("\n\n"); 
     }
        
     
