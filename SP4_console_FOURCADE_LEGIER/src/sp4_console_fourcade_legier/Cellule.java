@@ -35,6 +35,7 @@ public boolean affecterJeton(Jeton jeton){
 }    
     
 public Jeton recupererJeton(){
+    
     return jetonCourant;
 }    
     
