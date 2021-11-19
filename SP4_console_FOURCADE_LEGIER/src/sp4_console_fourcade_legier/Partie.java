@@ -45,8 +45,9 @@ public class Partie {
        
         Scanner sc = new Scanner(System.in);
         int colonne;
-        
-        while(grilleJeu.etreGagnantPourJoueur(joueurCourant) == false || grilleJeu.etreRemplie()== false) {
+        grilleJeu.afficherGrilleSurConsole();
+            
+        while(grilleJeu.etreGagnantPourJoueur(joueurCourant) == false && grilleJeu.etreRemplie()== false) {
             
             if (joueurCourant == ListeJoueurs[0]){
             joueurCourant = ListeJoueurs[1];
@@ -55,7 +56,6 @@ public class Partie {
             joueurCourant = ListeJoueurs[0];  //au premier tour cest joueur1 qui joue
             }
             
-            grilleJeu.afficherGrilleSurConsole();
             
             System.out.println("Saisissez la colonne :");
             colonne = sc.nextInt();
@@ -73,7 +73,8 @@ public class Partie {
                }
            }
            grilleJeu.ajouterJetonDansColonne(jetonCourant, colonne);
-        
+           grilleJeu.afficherGrilleSurConsole();
+            
         }
      
         System.out.println("C'est gagné");
