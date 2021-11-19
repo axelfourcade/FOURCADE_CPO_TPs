@@ -15,7 +15,7 @@ public class Partie {
     
     Joueur [] ListeJoueurs = new Joueur[2];
     Joueur joueurCourant;
-    Grille grilleJeu;
+    Grille grilleJeu = new Grille();
     
     public Partie (Joueur joueur1 , Joueur joueur2){
         ListeJoueurs[0]=joueur1;
@@ -65,25 +65,18 @@ public class Partie {
                 colonne = sc.nextInt();
             }
             
-            
-           for (int i=0;i<=20;i++){
+            Jeton jetonCourant = null;
+            for (int i=0;i<=20;i++){
                if (joueurCourant.ListeJetons[20-i] != null){
-                   Jeton jetonCourant = joueurCourant.ListeJetons[20-i];
+                   jetonCourant = joueurCourant.ListeJetons[20-i];
                    break;
                }
            }
-            
-            
-            
-            grilleJeu.ajouterJetonDansColonne( colonne);
-            
-          
-            
-           
-        
+           grilleJeu.ajouterJetonDansColonne(jetonCourant, colonne);
         
         }
      
+        System.out.println("C'est gagné");
     }      
   
     

@@ -88,14 +88,17 @@ public class Grille {
     
     public boolean celluleOccupee(int ligne , int colonne){
 
-        if(CellulesJeu[ligne-1][colonne-1].presenceJeton() == true){
+        if(CellulesJeu[ligne][colonne].presenceJeton() == true){
             return true;
         }
         return false;   
     }
     
     public String lireCouleurDuJeton (int ligne , int colonne){
-        return CellulesJeu[ligne-1][colonne-1].jetonCourant.lireCouleur();
+        if (CellulesJeu[ligne][colonne].jetonCourant == null){
+            return "vide";
+        }
+        return CellulesJeu[ligne][colonne].jetonCourant.lireCouleur();
     }
 
             
@@ -104,18 +107,18 @@ public class Grille {
             for(int j =0;j<= 6;j++){
              
                if (  (j<=3) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j+1))) && joueur.Couleur.equals(lireCouleurDuJeton(i,j+2)) && joueur.Couleur.equals(lireCouleurDuJeton(i,j+3))     ){
-                   System.out.println("Colonne x4");
+                   //System.out.println("C'est gagné");
                    return true ;
                }
                if (  (j<=3)&&(i<=2) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i+1,j+1))) && joueur.Couleur.equals(lireCouleurDuJeton(i+2,j+2)) && joueur.Couleur.equals(lireCouleurDuJeton(i+3,j+3))     ){
-                   System.out.println("Colonne x4");
+                   //System.out.println("C'est gagné");
                    return true ;
                }
                if (  (i<=2) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i+1,j))) && joueur.Couleur.equals(lireCouleurDuJeton(i+2,j)) && joueur.Couleur.equals(lireCouleurDuJeton(i+3,j))     ){
-                   System.out.println("Colonne x4");
+                   //System.out.println("C'est gagné");
                    return true ;}
                if (  (j>=3)&&(i<+2) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i-1,j+1))) && joueur.Couleur.equals(lireCouleurDuJeton(i-2,j+2)) && joueur.Couleur.equals(lireCouleurDuJeton(i-3,j+3))     ){
-                   System.out.println("Colonne x4");
+                   //System.out.println("C'est gagné");
                    return true ;
                }
              }
@@ -126,7 +129,7 @@ public class Grille {
    
  public void tasserGrille(int colonne,int ligne)  {
      for(int i =0;i>=ligne-1 ;i++) {
-         CellulesJeu[i][colonne-1].jetonCourant = CellulesJeu[i+1][colonne-1].jetonCourant;
+         CellulesJeu[i][colonne].jetonCourant = CellulesJeu[i+1][colonne-1].jetonCourant;
      }
      
  }
