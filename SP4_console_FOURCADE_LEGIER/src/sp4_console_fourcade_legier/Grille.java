@@ -24,8 +24,8 @@ public class Grille {
     public boolean ajouterJetonDansColonne(Jeton jeton,int colonne) {
         
         for (int i = 5; i >=0 ; i--){
-            if (CellulesJeu[i][colonne-1].jetonCourant == null){
-                CellulesJeu[i][colonne-1].jetonCourant = jeton;
+            if (CellulesJeu[i][colonne-1].presenceJeton() == false){
+                CellulesJeu[i][colonne-1].affecterJeton(jeton);
                 return true;
             }
         }            
@@ -37,7 +37,7 @@ public class Grille {
         
          for(int i =0;i<=5;i++){
             for(int j =0;j<= 6;j++){
-                if (CellulesJeu[i][j].jetonCourant == null){
+                if (CellulesJeu[i][j].presenceJeton() == false){
                 return false;
                 }
             }
@@ -69,7 +69,7 @@ public class Grille {
             
             for(int j =0;j<= 6;j++){
                 
-                if (CellulesJeu[i][j].jetonCourant == null){
+                if (CellulesJeu[i][j].presenceJeton() == false){
                     System.out.print("x  ");
                 }
                 if ("rouge".equals(CellulesJeu[i][j].lireCouleurDuJeton())){
@@ -88,7 +88,7 @@ public class Grille {
     
     public boolean celluleOccupee(int ligne , int colonne){
 
-        if(CellulesJeu[ligne-1][colonne-1].jetonCourant !=null){
+        if(CellulesJeu[ligne-1][colonne-1].presenceJeton() == true){
             return true;
         }
         return false;   
@@ -142,7 +142,8 @@ public boolean colonneRemplie(int colonne){
  
 
 public boolean placerDesintegrateur(int ligne,int colonne){
-     if(CellulesJeu[ligne-1][colonne-1].desintegrateur!=true){
+     if(CellulesJeu[ligne-1][colonne-1].presenceDesintegrateur() == false){
+        CellulesJeu[ligne-1][colonne-1].placerDesintegrateur();
          return true ;
      }
      return false;
@@ -151,7 +152,8 @@ public boolean placerDesintegrateur(int ligne,int colonne){
 
 
  public boolean placerTrouNoir(int ligne, int colonne){
-     if(CellulesJeu[ligne-1][colonne-1].trouNoir!=true){
+     if(CellulesJeu[ligne-1][colonne-1].presenceTrouNoir() == false){
+        CellulesJeu[ligne-1][colonne-1].placerTrouNoir();
          return true ;
      }
      return false;
@@ -159,7 +161,7 @@ public boolean placerDesintegrateur(int ligne,int colonne){
  }
 
 public boolean supprimerJeton (int ligne,int colonne){
-    if(CellulesJeu[ligne-1][colonne-1].jetonCourant != null){
+    if(CellulesJeu[ligne-1][colonne-1].presenceJeton() == true){
         CellulesJeu[ligne-1][colonne-1].jetonCourant = null;
         return true;            
     }

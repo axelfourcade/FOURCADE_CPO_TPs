@@ -114,4 +114,12 @@ public boolean activerTrouNoir(){
     return false ;
 }
 
+public boolean presenceJeton (){
+    if(jetonCourant==null){
+        return false;
+    }
+    return true;
+}
+    
+
 }
