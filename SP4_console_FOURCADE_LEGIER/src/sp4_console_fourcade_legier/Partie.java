@@ -39,7 +39,22 @@ public class Partie {
         Jeton jeton1 = new Jeton (ListeJoueurs[0].Couleur);
         ListeJoueurs[0].ajouterJeton(jeton1);
         Jeton jeton2 = new Jeton (ListeJoueurs[1].Couleur);
-        ListeJoueurs[1].ajouterJeton(jeton2);          
+        ListeJoueurs[1].ajouterJeton(jeton2);     
+        
+        for (int i=1 ; i<=5 ; i++){
+            int ligne ;
+            int colonne ;
+           
+            ligne = (int)(Math.random() * 6);
+            colonne = (int)(Math.random() * 7);      
+            boolean a =grilleJeu.CellulesJeu[ligne][colonne].placerTrouNoir();
+           
+            while (a == false){
+                a = grilleJeu.CellulesJeu[ligne][colonne].placerTrouNoir();
+                ligne = (int)(Math.random() * 5);
+                colonne = (int)(Math.random() * 6);
+            }
+        }
     }
     
     

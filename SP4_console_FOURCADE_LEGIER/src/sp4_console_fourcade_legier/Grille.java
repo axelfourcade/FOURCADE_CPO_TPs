@@ -24,8 +24,13 @@ public class Grille {
     public boolean ajouterJetonDansColonne(Jeton jeton,int colonne) {
         
         for (int i = 5; i >=0 ; i--){
-            if (CellulesJeu[i][colonne-1].presenceJeton() == false){
+            if (CellulesJeu[i][colonne-1].presenceJeton() == false && CellulesJeu[i][colonne-1].presenceTrouNoir()== false){
                 CellulesJeu[i][colonne-1].affecterJeton(jeton);
+                return true;
+            }
+            else if (CellulesJeu[i][colonne-1].presenceTrouNoir()==true){
+                CellulesJeu[i][colonne-1].activerTrouNoir();
+                System.out.println("Ton jeton a été aspiré dans un trou noir.");
                 return true;
             }
         }            
@@ -70,14 +75,24 @@ public class Grille {
             for(int j =0;j<= 6;j++){
                 
                 if (CellulesJeu[i][j].presenceJeton() == false){
-                    System.out.print("x  ");
+                    if (CellulesJeu[i][j].presenceTrouNoir() == true ){
+                        System.out.print("N  ");
+                    }
+                    else if (CellulesJeu[i][j].presenceDesintegrateur() == true && CellulesJeu[i][j].presenceTrouNoir() == false){
+                        System.out.print("D  ");
+                    }
+                    else{
+                        System.out.print("x  ");
+                    }
                 }
-                if ("rouge".equals(CellulesJeu[i][j].lireCouleurDuJeton())){
-                    System.out.print("R  ");
-                }
-                if ("jaune".equals(CellulesJeu[i][j].lireCouleurDuJeton())){
-                    System.out.print("J  ");
-            }   
+                else{
+                    if ("rouge".equals(CellulesJeu[i][j].lireCouleurDuJeton())){
+                        System.out.print("R  ");
+                    }
+                    if ("jaune".equals(CellulesJeu[i][j].lireCouleurDuJeton())){
+                        System.out.print("J  ");
+                    }
+                }   
             }     
             System.out.print(i+1);
         }
