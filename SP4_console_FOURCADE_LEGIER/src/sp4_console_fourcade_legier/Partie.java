@@ -77,7 +77,7 @@ public class Partie {
             
         }
      
-        System.out.println("C'est gagné");
+        System.out.println("La partie est terminée !");
     }      
   
     

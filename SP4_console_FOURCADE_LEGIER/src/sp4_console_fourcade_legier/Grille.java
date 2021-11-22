@@ -88,7 +88,7 @@ public class Grille {
     
     public boolean celluleOccupee(int ligne , int colonne){
 
-        if(CellulesJeu[ligne][colonne].presenceJeton() == true){
+        if(CellulesJeu[ligne][colonne-1].presenceJeton() == true){
             return true;
         }
         return false;   
@@ -107,18 +107,18 @@ public class Grille {
             for(int j =0;j<= 6;j++){
              
                if (  (j<=3) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j+1))) && joueur.Couleur.equals(lireCouleurDuJeton(i,j+2)) && joueur.Couleur.equals(lireCouleurDuJeton(i,j+3))     ){
-                   //System.out.println("C'est gagné");
+                   System.out.println("C'est gagné pour " + joueur);
                    return true ;
                }
                if (  (j<=3)&&(i<=2) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i+1,j+1))) && joueur.Couleur.equals(lireCouleurDuJeton(i+2,j+2)) && joueur.Couleur.equals(lireCouleurDuJeton(i+3,j+3))     ){
-                   //System.out.println("C'est gagné");
+                   System.out.println("C'est gagné pour " + joueur);
                    return true ;
                }
                if (  (i<=2) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i+1,j))) && joueur.Couleur.equals(lireCouleurDuJeton(i+2,j)) && joueur.Couleur.equals(lireCouleurDuJeton(i+3,j))     ){
-                   //System.out.println("C'est gagné");
+                   System.out.println("C'est gagné pour " + joueur);
                    return true ;}
-               if (  (j>=3)&&(i<+2) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i-1,j+1))) && joueur.Couleur.equals(lireCouleurDuJeton(i-2,j+2)) && joueur.Couleur.equals(lireCouleurDuJeton(i-3,j+3))     ){
-                   //System.out.println("C'est gagné");
+               if (  (j<=3)&&(i>=3) && (joueur.Couleur.equals(lireCouleurDuJeton(i,j))) && (joueur.Couleur.equals(lireCouleurDuJeton(i-1,j+1))) && joueur.Couleur.equals(lireCouleurDuJeton(i-2,j+2)) && joueur.Couleur.equals(lireCouleurDuJeton(i-3,j+3))     ){
+                   System.out.println("C'est gagné pour " + joueur);
                    return true ;
                }
              }
