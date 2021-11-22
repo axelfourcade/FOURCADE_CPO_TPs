@@ -41,13 +41,13 @@ public class SP4_console_FOURCADE_LEGIER {
 
 //g.afficherGrilleSurConsole();
 
-Joueur j1 = new Joueur ("axel");
-Joueur j2 = new Joueur ("noa");
+//Joueur j1 = new Joueur ("axel");
+//Joueur j2 = new Joueur ("noa");
 
-Partie partie = new Partie(j1,j2);
-partie.attribueCouleursAuxJoueurs();
-partie.initialiserPartie();
-partie.debuterPartie();
+//Partie partie = new Partie(j1,j2);
+//partie.attribueCouleursAuxJoueurs();
+//partie.initialiserPartie();
+//partie.debuterPartie();
 
 
 
