@@ -5,6 +5,8 @@
  */
 package sp4_console_fourcade_legier;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Axel
@@ -41,8 +43,14 @@ public class SP4_console_FOURCADE_LEGIER {
 
 //g.afficherGrilleSurConsole();
 
-Joueur j1 = new Joueur ("axel");
-Joueur j2 = new Joueur ("noa");
+Scanner sc = new Scanner(System.in);
+System.out.println("Joueur 1 quel est ton nom ?");
+String joueur1 = sc.next();
+System.out.println("Joueur 2 quel est ton nom ?");
+String joueur2 = sc.next();
+
+Joueur j1 = new Joueur (joueur1);
+Joueur j2 = new Joueur (joueur2);
 
 Partie partie = new Partie(j1,j2);
 partie.attribueCouleursAuxJoueurs();
