@@ -172,7 +172,11 @@ public boolean supprimerJeton (int ligne,int colonne){
 
     }    
     
-    
+public Jeton recupererJeton (int ligne, int colonne){
+    Jeton j = CellulesJeu[ligne-1][colonne-1].jetonCourant ;
+    CellulesJeu[ligne-1][colonne-1].jetonCourant = null;     
+    return j;
+}    
    
 }
 
