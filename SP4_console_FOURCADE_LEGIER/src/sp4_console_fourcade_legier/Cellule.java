@@ -101,7 +101,7 @@ public String lireCouleurDuJeton(){
     
 public boolean recupererDesintegrateur(){
     if(presenceDesintegrateur()==true) {
-        jetonCourant = null ;
+        desintegrateur = false ;
         return true;
     }
     return false;
