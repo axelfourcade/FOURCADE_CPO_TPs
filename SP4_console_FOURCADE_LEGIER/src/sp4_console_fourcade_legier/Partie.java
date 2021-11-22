@@ -26,7 +26,9 @@ public class Partie {
     
     public void attribueCouleursAuxJoueurs(){
         ListeJoueurs[0].affecterCouleur("jaune");
+        System.out.println(ListeJoueurs[0].Nom + " tu as la couleur jaune.");
         ListeJoueurs[1].affecterCouleur("rouge");
+        System.out.println(ListeJoueurs[1].Nom + " tu as la couleur rouge.");
     }
     
     
