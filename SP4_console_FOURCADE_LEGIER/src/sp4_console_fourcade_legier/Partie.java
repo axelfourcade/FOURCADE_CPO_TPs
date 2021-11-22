@@ -56,13 +56,14 @@ public class Partie {
             joueurCourant = ListeJoueurs[0];  //au premier tour cest joueur1 qui joue
             }
             
-            
-            System.out.println("Saisissez la colonne :");
+            System.out.println(joueurCourant.Nom + " c'est à toi de jouer,");
+            System.out.println("Saisis la colonne :");
             colonne = sc.nextInt();
             
             while(colonne<1 || colonne >7 ||grilleJeu.colonneRemplie(colonne)==true){
-                System.out.println("Saisissez la colonne :");
+                System.out.println("La colonne est remplie ou il y a eu erreur de frappe, saisis une autre colonne :");
                 colonne = sc.nextInt();
+                
             }
             
             Jeton jetonCourant = null;
