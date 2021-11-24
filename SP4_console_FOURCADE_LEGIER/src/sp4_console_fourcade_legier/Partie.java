@@ -93,9 +93,11 @@ public class Partie {
        
         Scanner sc = new Scanner(System.in);
         int colonne;
-        int choix = 0;
+        int choix ;
         int Crecup ;
         int Lrecup ;
+        int Cdes ;
+        int Ldes ;
         grilleJeu.afficherGrilleSurConsole();
             
         while(grilleJeu.etreGagnantPourJoueur(joueurCourant) == false && grilleJeu.etreRemplie()== false) {
@@ -149,15 +151,21 @@ public class Partie {
                         break;
                     }
                 }
-
-                //for (int i = 5; i >=0 ; i--){
-                //    if (grilleJeu.CellulesJeu[i][colonne-1].presenceDesintegrateur()==true){
-                //        joueurCourant.nombreDesintegrateurs ++;
-                //        break;
-                //    }
-                //}
+                
+                int j = 0;
+                for (int i = 5; i >=0 ; i--){
+                    if (grilleJeu.CellulesJeu[i][colonne-1].presenceJeton()==false){
+                        j=i;
+                        break;
+                    }
+                }
+                
+                if (grilleJeu.CellulesJeu[j][colonne-1].presenceDesintegrateur()==true){
+                        joueurCourant.nombreDesintegrateurs ++;
+                    }
                 
                 grilleJeu.ajouterJetonDansColonne(jetonCourant, colonne);
+                
             }
             else if (choix==2){
                 System.out.println("Choisis la colonne du jeton que tu veux recuperer :");
@@ -203,11 +211,44 @@ public class Partie {
             }
             else if (choix == 3){
                 
+                System.out.println("Choisis la colonne du jeton que tu veux desintegrer :");
+                Cdes = sc.nextInt();
+                System.out.println("Choisis la ligne du jeton que tu veux desintegrer :");
+                Ldes = sc.nextInt();
+                 
+                boolean a =grilleJeu.supprimerJeton(Ldes, Cdes);
+                
+                while (a==false){
+                    System.out.println("Il n'y a pas de jeton adverse cette case, choisis en une autre,");
+                    System.out.println("Choisis la colonne du jeton que tu veux desintegrer :");
+                    Cdes = sc.nextInt();
+                    System.out.println("Choisis la ligne du jeton que tu veux desintegrer :");
+                    Ldes = sc.nextInt(); 
+                    a =grilleJeu.supprimerJeton(Ldes, Cdes);
+                    if (joueurCourant.Couleur.equals(grilleJeu.CellulesJeu[Ldes-1][Cdes-1].lireCouleurDuJeton())){
+                        a = false;
+                    }
+                }
                 
                 
+                grilleJeu.tasserGrille(Cdes);
+                System.out.println(joueurCourant.Nom + " tu as désintégré un jeton.");
+                
+                boolean verif1 = grilleJeu.etreGagnantPourJoueur(ListeJoueurs[0]);
+                boolean verif2 = grilleJeu.etreGagnantPourJoueur(ListeJoueurs[1]);
                 
                 
+                if (verif1 == true && verif2 == true){
+                    grilleJeu.afficherGrilleSurConsole();
+                    System.out.println(joueurCourant.Nom + " a provoqué une faute de jeu, il a donc perdu.");
+                    break;  
+                }
+                else if (verif1 == true || verif2 == true){
+                    grilleJeu.afficherGrilleSurConsole();
+                    break;
+                }
                 
+                joueurCourant.nombreDesintegrateurs -= 1 ;
                 
             }     
             

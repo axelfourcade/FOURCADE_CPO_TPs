@@ -30,6 +30,7 @@ public class Grille {
             }
             else if (CellulesJeu[i][colonne-1].presenceTrouNoir()==true){
                 CellulesJeu[i][colonne-1].activerTrouNoir();
+                CellulesJeu[i][colonne-1].recupererDesintegrateur();
                 System.out.println("Ton jeton a été aspiré dans un trou noir.");
                 return true;
             }
