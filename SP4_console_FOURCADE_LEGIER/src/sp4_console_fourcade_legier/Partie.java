@@ -111,7 +111,7 @@ public class Partie {
                 System.out.println("Choisis la ligne du jeton que tu veux recuperer :");
                 Lrecup = sc.nextInt();
                 
-                while (!joueurCourant.Couleur.equals(grilleJeu.CellulesJeu[Lrecup-1][Crecup-1].lireCouleurDuJeton())){
+                while (Lrecup<1 && Lrecup>6 && Crecup<1 && Crecup>7 && !joueurCourant.Couleur.equals(grilleJeu.CellulesJeu[Lrecup-1][Crecup-1].lireCouleurDuJeton())){
                     System.out.println("Tu n'as pas de jeton a cette case, choisis en une autre,");
                     System.out.println("Choisis la colonne du jeton que tu veux recuperer :");
                     Crecup = sc.nextInt();
@@ -129,7 +129,7 @@ public class Partie {
                     }
                 }
                 
-                grilleJeu.tasserGrille(Lrecup,Crecup);
+                grilleJeu.tasserGrille(Crecup);
                 System.out.println(joueurCourant.Nom + " tu as récupéré un jeton.");
             }
                  
