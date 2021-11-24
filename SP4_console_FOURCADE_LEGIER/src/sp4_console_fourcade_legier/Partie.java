@@ -131,6 +131,21 @@ public class Partie {
                 
                 grilleJeu.tasserGrille(Crecup);
                 System.out.println(joueurCourant.Nom + " tu as récupéré un jeton.");
+                
+                boolean verif1 = grilleJeu.etreGagnantPourJoueur(ListeJoueurs[0]);
+                boolean verif2 = grilleJeu.etreGagnantPourJoueur(ListeJoueurs[1]);
+                
+                
+                if (verif1 == true && verif2 == true){
+                    grilleJeu.afficherGrilleSurConsole();
+                    System.out.println(joueurCourant.Nom + " a provoqué une faute de jeu, il a donc perdu.");
+                    break;  
+                }
+                else if (verif1 == true || verif2 == true){
+                    grilleJeu.afficherGrilleSurConsole();
+                    break;
+                }
+                
             }
                  
             
