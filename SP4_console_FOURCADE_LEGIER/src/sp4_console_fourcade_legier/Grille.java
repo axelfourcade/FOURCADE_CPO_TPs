@@ -142,9 +142,9 @@ public class Grille {
 
 }
    
- public void tasserGrille(int colonne,int ligne)  {
-     for(int i =0;i>=ligne-1 ;i++) {
-         CellulesJeu[i][colonne].jetonCourant = CellulesJeu[i+1][colonne-1].jetonCourant;
+ public void tasserGrille(int ligne,int colonne)  {
+     for(int i =0;i>=ligne -1 ;i++) {
+         CellulesJeu[i][colonne].jetonCourant = CellulesJeu[i+1][colonne].jetonCourant;
      }
      
  }
@@ -188,8 +188,10 @@ public boolean supprimerJeton (int ligne,int colonne){
     }    
     
 public Jeton recupererJeton (int ligne, int colonne){
+
     Jeton j = CellulesJeu[ligne-1][colonne-1].jetonCourant ;
-    CellulesJeu[ligne-1][colonne-1].jetonCourant = null;     
+    CellulesJeu[ligne-1][colonne-1].jetonCourant = null;    
+    
     return j;
 }    
    
