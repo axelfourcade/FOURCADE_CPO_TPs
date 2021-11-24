@@ -42,7 +42,7 @@ public class Partie {
         ListeJoueurs[1].ajouterJeton(jeton2);  
         
         
-        for (int i=1 ; i<=5 ; i++){
+        for (int i=1 ; i<=3 ; i++){
             int ligne ;
             int colonne ;
            
@@ -52,6 +52,36 @@ public class Partie {
            
             while (a == false){
                 a = grilleJeu.CellulesJeu[ligne][colonne].placerTrouNoir();
+                ligne = (int)(Math.random() * 5);
+                colonne = (int)(Math.random() * 6);
+            }
+        }
+        for (int i=1 ; i<=2 ; i++){
+            int ligne ;
+            int colonne ;
+           
+            ligne = (int)(Math.random() * 6);
+            colonne = (int)(Math.random() * 7);      
+            boolean a =grilleJeu.CellulesJeu[ligne][colonne].placerTrouNoir();
+            boolean b = grilleJeu.CellulesJeu[ligne][colonne].placerDesintegrateur();
+            
+            while (a == false || b == false){
+                a = grilleJeu.CellulesJeu[ligne][colonne].placerTrouNoir();
+                b =grilleJeu.CellulesJeu[ligne][colonne].placerDesintegrateur();
+                ligne = (int)(Math.random() * 5);
+                colonne = (int)(Math.random() * 6);
+            }
+        }
+        for (int i=1 ; i<=3 ; i++){
+            int ligne ;
+            int colonne ;
+           
+            ligne = (int)(Math.random() * 6);
+            colonne = (int)(Math.random() * 7);      
+            boolean b = grilleJeu.CellulesJeu[ligne][colonne].placerDesintegrateur();
+            
+            while (b == false || grilleJeu.CellulesJeu[ligne][colonne].presenceTrouNoir() == true ){
+                b =grilleJeu.CellulesJeu[ligne][colonne].placerDesintegrateur();
                 ligne = (int)(Math.random() * 5);
                 colonne = (int)(Math.random() * 6);
             }
@@ -77,14 +107,30 @@ public class Partie {
             joueurCourant = ListeJoueurs[0];  //au premier tour cest joueur1 qui joue
             }
             
-            System.out.println(joueurCourant.Nom + " c'est à toi de jouer,");
-            System.out.println("Choisis l'action que tu veux effectuer :\n1) Ajouter un jeton\n2) Recuperer un jeton");
-            choix = sc.nextInt();
             
-            while (choix != 1 && choix !=2){
-                System.out.println("Erreur de frappe, choisis de nouveau l'action que tu veux effectuer :\n1) Ajouter un jeton\n2) Recuperer un jeton");
+            if (joueurCourant.nombreDesintegrateurs==0){
+                System.out.println(joueurCourant.Nom + " c'est à toi de jouer,");
+                System.out.println("Choisis l'action que tu veux effectuer :\n1) Ajouter un jeton\n2) Recuperer un jeton");
                 choix = sc.nextInt();
+            
+                while (choix != 1 && choix !=2){
+                    System.out.println("Erreur de frappe, choisis de nouveau l'action que tu veux effectuer :\n1) Ajouter un jeton\n2) Recuperer un jeton");
+                    choix = sc.nextInt();
+                }
             }
+            else {
+                System.out.println(joueurCourant.Nom + " c'est à toi de jouer,");
+                System.out.println("Choisis l'action que tu veux effectuer :\n1) Ajouter un jeton\n2) Recuperer un jeton\n3) Desintegrer un jeton");
+                choix = sc.nextInt();
+            
+                while (choix != 1 && choix !=2 && choix !=3 ){
+                    System.out.println("Erreur de frappe, choisis de nouveau l'action que tu veux effectuer :\n1) Ajouter un jeton\n2) Recuperer un jeton\n3) Desintegrer un jeton");
+                    choix = sc.nextInt();
+                }
+            }
+            
+            
+            
             
             if (choix==1){
                 System.out.println("Saisis la colonne :");
@@ -95,7 +141,7 @@ public class Partie {
                     colonne = sc.nextInt();
                 
                 }
-            
+
                 Jeton jetonCourant = null;
                 for (int i=0;i<=20;i++){
                     if (joueurCourant.ListeJetons[20-i] != null){
@@ -103,6 +149,14 @@ public class Partie {
                         break;
                     }
                 }
+
+                //for (int i = 5; i >=0 ; i--){
+                //    if (grilleJeu.CellulesJeu[i][colonne-1].presenceDesintegrateur()==true){
+                //        joueurCourant.nombreDesintegrateurs ++;
+                //        break;
+                //    }
+                //}
+                
                 grilleJeu.ajouterJetonDansColonne(jetonCourant, colonne);
             }
             else if (choix==2){
@@ -147,7 +201,15 @@ public class Partie {
                 }
                 
             }
-                 
+            else if (choix == 3){
+                
+                
+                
+                
+                
+                
+                
+            }     
             
             grilleJeu.afficherGrilleSurConsole();
             

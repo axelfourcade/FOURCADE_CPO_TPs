@@ -24,13 +24,18 @@ public class Grille {
     public boolean ajouterJetonDansColonne(Jeton jeton,int colonne) {
         
         for (int i = 5; i >=0 ; i--){
-            if (CellulesJeu[i][colonne-1].presenceJeton() == false && CellulesJeu[i][colonne-1].presenceTrouNoir()== false){
+            if (CellulesJeu[i][colonne-1].presenceJeton() == false && CellulesJeu[i][colonne-1].presenceTrouNoir()== false && CellulesJeu[i][colonne-1].presenceDesintegrateur()==false){
                 CellulesJeu[i][colonne-1].affecterJeton(jeton);
                 return true;
             }
             else if (CellulesJeu[i][colonne-1].presenceTrouNoir()==true){
                 CellulesJeu[i][colonne-1].activerTrouNoir();
                 System.out.println("Ton jeton a été aspiré dans un trou noir.");
+                return true;
+            }
+            else if (CellulesJeu[i][colonne-1].presenceDesintegrateur()==true){
+                CellulesJeu[i][colonne-1].recupererDesintegrateur();
+                CellulesJeu[i][colonne-1].affecterJeton(jeton);
                 return true;
             }
         }            
