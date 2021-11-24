@@ -158,7 +158,7 @@ public class fenetreDejeu extends javax.swing.JFrame {
                 nom1ActionPerformed(evt);
             }
         });
-        PanneauInfoJoueur.add(nom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 110, 30));
+        PanneauInfoJoueur.add(nom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 110, 30));
         PanneauInfoJoueur.add(nom2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 110, 30));
 
         start.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -197,7 +197,7 @@ public class fenetreDejeu extends javax.swing.JFrame {
         getContentPane().add(PanneauInfoJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 440, 350, 190));
 
         PanneauGrille.setBackground(new java.awt.Color(255, 255, 255));
-        PanneauGrille.setLayout(new java.awt.GridLayout());
+        PanneauGrille.setLayout(new java.awt.GridLayout(1, 0));
         getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 672, 576));
 
         col0.setText("1");
