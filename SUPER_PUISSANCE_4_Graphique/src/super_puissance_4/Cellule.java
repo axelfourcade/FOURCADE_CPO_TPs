@@ -82,6 +82,8 @@ public boolean presenceTrouNoir(){
 public boolean presenceDesintegrateur(){
    if (desintegrateur == true){
        
+       
+       
         return true;
     }
     return false ;
