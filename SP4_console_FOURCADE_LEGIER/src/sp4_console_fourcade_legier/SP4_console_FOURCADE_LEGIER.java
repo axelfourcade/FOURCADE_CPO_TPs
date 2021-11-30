@@ -35,8 +35,6 @@ partie.debuterPartie();
 
 
 
-
-
     }
     
 }
