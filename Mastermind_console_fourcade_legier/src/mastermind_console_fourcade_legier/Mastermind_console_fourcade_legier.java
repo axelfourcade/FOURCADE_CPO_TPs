@@ -16,8 +16,8 @@ public class Mastermind_console_fourcade_legier {
      */
     public static void main(String[] args) {
 
-
-
+        Partie partie = new Partie();
+        partie.initialiserPartie();
 
 
 
