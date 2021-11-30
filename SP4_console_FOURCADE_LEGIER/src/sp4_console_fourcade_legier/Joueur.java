@@ -25,7 +25,12 @@ public class Joueur {
     Couleur =couleur;
 }   
     
-public boolean ajouterJeton (Jeton jeton){
+    /**
+     * la fct ajoute 21 jeton a un joueur
+     * @param jeton le jeton a ajouter
+     * @return vrai si cest bien passe, faux sinon
+     */
+    public boolean ajouterJeton (Jeton jeton){
     
     for (int i=0;i<=20;i++){
         

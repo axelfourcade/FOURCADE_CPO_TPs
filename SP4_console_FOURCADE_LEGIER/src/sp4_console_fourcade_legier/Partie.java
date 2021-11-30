@@ -21,7 +21,6 @@ public class Partie {
         ListeJoueurs[0]=joueur1;
         ListeJoueurs[1]=joueur2;
         joueurCourant = ListeJoueurs[1];
-        
     }
     
     public void attribueCouleursAuxJoueurs(){
