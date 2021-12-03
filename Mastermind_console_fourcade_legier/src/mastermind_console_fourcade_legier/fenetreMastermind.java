@@ -27,6 +27,7 @@ public class fenetreMastermind extends javax.swing.JFrame {
     private void initComponents() {
 
         grille = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
         couleur1 = new javax.swing.JPanel();
         couleur2 = new javax.swing.JPanel();
         couleur3 = new javax.swing.JPanel();
@@ -46,15 +47,30 @@ public class fenetreMastermind extends javax.swing.JFrame {
         grille.setBackground(new java.awt.Color(204, 204, 255));
         grille.setForeground(new java.awt.Color(153, 153, 255));
 
+        jTextField1.setBackground(new java.awt.Color(204, 255, 204));
+        jTextField1.setFont(new java.awt.Font("Arial Black", 3, 36)); // NOI18N
+        jTextField1.setText("MASTERMIND");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout grilleLayout = new javax.swing.GroupLayout(grille);
         grille.setLayout(grilleLayout);
         grilleLayout.setHorizontalGroup(
             grilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
+            .addGroup(grilleLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         grilleLayout.setVerticalGroup(
             grilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGroup(grilleLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(601, Short.MAX_VALUE))
         );
 
         getContentPane().add(grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 490, 670));
@@ -158,11 +174,11 @@ public class fenetreMastermind extends javax.swing.JFrame {
         boutoncouleur1.setText("jButton1");
         getContentPane().add(boutoncouleur1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 690, 30, -1));
 
-        boutoncouleur2.setText("jButton1");
+        boutoncouleur2.setText("1");
         getContentPane().add(boutoncouleur2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 390, 30, -1));
 
-        boutoncouleur3.setText("jButton1");
-        getContentPane().add(boutoncouleur3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, 30, -1));
+        boutoncouleur3.setText("1");
+        getContentPane().add(boutoncouleur3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, 30, 20));
 
         boutoncouleur4.setText("jButton1");
         getContentPane().add(boutoncouleur4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 510, 30, -1));
@@ -175,6 +191,10 @@ public class fenetreMastermind extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,5 +245,6 @@ public class fenetreMastermind extends javax.swing.JFrame {
     private javax.swing.JPanel couleur5;
     private javax.swing.JPanel couleur6;
     private javax.swing.JPanel grille;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
