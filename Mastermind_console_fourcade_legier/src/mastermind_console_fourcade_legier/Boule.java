@@ -12,9 +12,12 @@ package mastermind_console_fourcade_legier;
 public class Boule {
    
     String Couleur;
+    Boule bouleCourant;
+    
     
     public Boule (String couleur){
         Couleur = couleur;
+        bouleCourant = null;
     }
     
     public String lireCouleur(){

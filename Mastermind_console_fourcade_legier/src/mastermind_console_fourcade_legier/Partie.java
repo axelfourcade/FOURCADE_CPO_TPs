@@ -41,6 +41,9 @@ public class Partie {
     
     //System.out.println("Choisis la couleur de ta boule :\n1) Jaune\n2) Bleu\n3) Rouge\n4) Vert\n5) Blanc\n6) Noir");
     //tableauFinal[i] = sc.nextInt();    
+    
+    
+    
     }
     
     
