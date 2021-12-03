@@ -11,10 +11,25 @@ package mastermind_console_fourcade_legier;
 public class fenetreMastermind extends javax.swing.JFrame {
 
     Grille grilleDeJeu = new Grille();
-    Boule bouleCourant ;
+    Grille grilleOrdi = new Grille();
+    Boule bouleCourant;
 
     public fenetreMastermind() {
         initComponents();
+
+        for (int k = 0; k < 4; k++) {
+            CelluleGraphique cellResultat = new CelluleGraphique(grilleOrdi.BouleJeu[1][k]);
+
+            cellResultat.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    Boule bouleOrdi = cellResultat.bouleAssociee;
+                    grilleResultat.repaint();
+
+                }
+            });
+            grilleResultat.add(cellResultat);
+            grilleResultat.repaint();
+        }
 
         for (int i = 9; i >= 0; i--) {
             for (int j = 0; j < 4; j++) {
@@ -25,15 +40,16 @@ public class fenetreMastermind extends javax.swing.JFrame {
 
                         Boule b = cellGraph.bouleAssociee;
                         grille.repaint();
-                        
-                        if (b.bouleCourant == null) return;
 
+                        if (b.bouleCourant == null) {
+                            return;
+                        }
 
                     }
                 });
-            grille.add(cellGraph);
-            grille.repaint();
-           
+                grille.add(cellGraph);
+                grille.repaint();
+
             }
         }
     }
@@ -41,7 +57,6 @@ public class fenetreMastermind extends javax.swing.JFrame {
     /**
      * Creates new form fenetreMastermind
      */
-   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,18 +67,17 @@ public class fenetreMastermind extends javax.swing.JFrame {
     private void initComponents() {
 
         grille = new javax.swing.JPanel();
-        couleur1 = new javax.swing.JPanel();
-        couleur2 = new javax.swing.JPanel();
-        couleur3 = new javax.swing.JPanel();
-        couleur4 = new javax.swing.JPanel();
-        couleur5 = new javax.swing.JPanel();
-        couleur6 = new javax.swing.JPanel();
+        couleursDispo = new javax.swing.JPanel();
         boutoncouleur1 = new javax.swing.JButton();
         boutoncouleur2 = new javax.swing.JButton();
         boutoncouleur3 = new javax.swing.JButton();
         boutoncouleur4 = new javax.swing.JButton();
         boutoncouleur5 = new javax.swing.JButton();
         boutoncouleur6 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        grilleResultat = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -71,103 +85,23 @@ public class fenetreMastermind extends javax.swing.JFrame {
         grille.setBackground(new java.awt.Color(204, 204, 255));
         grille.setForeground(new java.awt.Color(153, 153, 255));
         grille.setLayout(new java.awt.GridLayout(11, 4));
-        getContentPane().add(grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 490, 670));
+        getContentPane().add(grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 490, 670));
 
-        couleur1.setBackground(new java.awt.Color(153, 153, 153));
-        couleur1.setForeground(new java.awt.Color(204, 204, 204));
+        couleursDispo.setBackground(new java.awt.Color(153, 153, 153));
+        couleursDispo.setForeground(new java.awt.Color(204, 204, 204));
 
-        javax.swing.GroupLayout couleur1Layout = new javax.swing.GroupLayout(couleur1);
-        couleur1.setLayout(couleur1Layout);
-        couleur1Layout.setHorizontalGroup(
-            couleur1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout couleursDispoLayout = new javax.swing.GroupLayout(couleursDispo);
+        couleursDispo.setLayout(couleursDispoLayout);
+        couleursDispoLayout.setHorizontalGroup(
+            couleursDispoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
-        couleur1Layout.setVerticalGroup(
-            couleur1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+        couleursDispoLayout.setVerticalGroup(
+            couleursDispoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 340, Short.MAX_VALUE)
         );
 
-        getContentPane().add(couleur1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 560, 50, 50));
-
-        couleur2.setBackground(new java.awt.Color(153, 153, 153));
-        couleur2.setForeground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout couleur2Layout = new javax.swing.GroupLayout(couleur2);
-        couleur2.setLayout(couleur2Layout);
-        couleur2Layout.setHorizontalGroup(
-            couleur2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-        couleur2Layout.setVerticalGroup(
-            couleur2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(couleur2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 680, 50, 50));
-
-        couleur3.setBackground(new java.awt.Color(153, 153, 153));
-        couleur3.setForeground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout couleur3Layout = new javax.swing.GroupLayout(couleur3);
-        couleur3.setLayout(couleur3Layout);
-        couleur3Layout.setHorizontalGroup(
-            couleur3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-        couleur3Layout.setVerticalGroup(
-            couleur3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(couleur3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 620, 50, 50));
-
-        couleur4.setBackground(new java.awt.Color(153, 153, 153));
-        couleur4.setForeground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout couleur4Layout = new javax.swing.GroupLayout(couleur4);
-        couleur4.setLayout(couleur4Layout);
-        couleur4Layout.setHorizontalGroup(
-            couleur4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-        couleur4Layout.setVerticalGroup(
-            couleur4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(couleur4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 500, -1, -1));
-
-        couleur5.setBackground(new java.awt.Color(153, 153, 153));
-        couleur5.setForeground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout couleur5Layout = new javax.swing.GroupLayout(couleur5);
-        couleur5.setLayout(couleur5Layout);
-        couleur5Layout.setHorizontalGroup(
-            couleur5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-        couleur5Layout.setVerticalGroup(
-            couleur5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(couleur5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, -1, -1));
-
-        couleur6.setBackground(new java.awt.Color(153, 153, 153));
-        couleur6.setForeground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout couleur6Layout = new javax.swing.GroupLayout(couleur6);
-        couleur6.setLayout(couleur6Layout);
-        couleur6Layout.setHorizontalGroup(
-            couleur6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-        couleur6Layout.setVerticalGroup(
-            couleur6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(couleur6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, -1, -1));
+        getContentPane().add(couleursDispo, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 50, 340));
 
         boutoncouleur1.setText("jButton1");
         getContentPane().add(boutoncouleur1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 690, 30, -1));
@@ -187,8 +121,54 @@ public class fenetreMastermind extends javax.swing.JFrame {
         boutoncouleur6.setText("jButton1");
         getContentPane().add(boutoncouleur6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 630, 30, -1));
 
+        jTextField1.setBackground(new java.awt.Color(51, 255, 255));
+        jTextField1.setFont(new java.awt.Font("Arial", 3, 48)); // NOI18N
+        jTextField1.setText("MASTERMIND");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
+
+        jTextField2.setEditable(false);
+        jTextField2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.setText("Choisir un pion et le placer sur la grille :");
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 260, 50));
+
+        jTextField3.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
+        jTextField3.setText("Résultat ordinateur :");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 100, -1, 30));
+
+        grilleResultat.setBackground(new java.awt.Color(204, 204, 255));
+        grilleResultat.setLayout(new java.awt.GridLayout(1, 4));
+        getContentPane().add(grilleResultat, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, 410, 110));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,12 +212,11 @@ public class fenetreMastermind extends javax.swing.JFrame {
     private javax.swing.JButton boutoncouleur4;
     private javax.swing.JButton boutoncouleur5;
     private javax.swing.JButton boutoncouleur6;
-    private javax.swing.JPanel couleur1;
-    private javax.swing.JPanel couleur2;
-    private javax.swing.JPanel couleur3;
-    private javax.swing.JPanel couleur4;
-    private javax.swing.JPanel couleur5;
-    private javax.swing.JPanel couleur6;
+    private javax.swing.JPanel couleursDispo;
     private javax.swing.JPanel grille;
+    private javax.swing.JPanel grilleResultat;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
