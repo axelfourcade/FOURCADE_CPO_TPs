@@ -1,5 +1,6 @@
 package mastermind_console_fourcade_legier;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -14,10 +15,15 @@ import java.util.Scanner;
  */
 public class Partie {
     
-    String [] tableauJeu = new String [4];
-    String [] tableauFinal = new String [4];
+    ArrayList<String> tableauJeu = new ArrayList<String>();
+    ArrayList<String> tableauFinal = new ArrayList<String>();
+
+    
+    //String [] tableauJeu = new String [4];
+    //String [] tableauFinal = new String [4];
     int [] tableauRes = new int [2];
     Scanner sc = new Scanner(System.in);
+    
     Boule bouleCourante ;
     
     
@@ -27,9 +33,9 @@ public class Partie {
         
         for (int i=0;i<=3;i++){
             var = (int)(Math.random() * 6);
-            bouleCourante.AffecterCouleur(var);
-            tableauFinal[i] = bouleCourante.Couleur;
-            System.out.print(tableauFinal[i]);
+            //String c = bouleCourante.AffecterCouleur(var);
+            //tableauFinal.set(i,bouleCourante.Couleur);
+            //System.out.print(tableauFinal.get(i));
         }
         
     
