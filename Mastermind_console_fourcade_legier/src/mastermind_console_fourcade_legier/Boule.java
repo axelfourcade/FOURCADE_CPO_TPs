@@ -12,12 +12,10 @@ package mastermind_console_fourcade_legier;
 public class Boule {
    
     String Couleur;
-    Boule bouleCourant;
     
     
     public Boule (String couleur){
         Couleur = couleur;
-        bouleCourant = null;
     }
     
     public String lireCouleur(){
@@ -38,10 +36,10 @@ public class Boule {
             Couleur = "vert";
         }
         else if (nb==5){
-            Couleur = "blanc";
+            Couleur = "rose";
         }
         else if (nb==6){
-            Couleur = "noir";
+            Couleur = "cyan";
         }
         
         return Couleur;

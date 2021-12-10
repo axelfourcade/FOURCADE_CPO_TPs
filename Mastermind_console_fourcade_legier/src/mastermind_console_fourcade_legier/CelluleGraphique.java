@@ -17,32 +17,58 @@ import javax.swing.JButton;
 public class CelluleGraphique extends JButton {
     
     ImageIcon pionsachoisir = new javax.swing.ImageIcon(getClass().getResource("/images/pionsachoisir.png")) ;
-     Boule bouleAssociee;
+    ImageIcon bouleBleu = new javax.swing.ImageIcon(getClass().getResource("/images/bouleBleu.png")) ;
+    ImageIcon bouleCyan = new javax.swing.ImageIcon(getClass().getResource("/images/bouleCyan.png")) ;
+    ImageIcon bouleJaune = new javax.swing.ImageIcon(getClass().getResource("/images/bouleJaune.png")) ;
+    ImageIcon bouleRose = new javax.swing.ImageIcon(getClass().getResource("/images/bouleRose.png")) ;
+    ImageIcon bouleRouge = new javax.swing.ImageIcon(getClass().getResource("/images/bouleRouge.png")) ;
+    ImageIcon bouleVide = new javax.swing.ImageIcon(getClass().getResource("/images/bouleVide.png")) ;
+    ImageIcon bouleVert = new javax.swing.ImageIcon(getClass().getResource("/images/bouleVert.png")) ;
     
-    public void paintComponent (Graphics G){
-        super.paintComponent(G);
-        
-        //case couleur6:
-          //  setIcon(pionsachoisir);
-        
-        
-        //String couleur_jeton = celluleAssociee.lireCouleurDuJeton();
-          //  switch (couleur_jeton){
-            //    case "vide": 
-              //      setIcon(img_vide);
-                //    break ;
-                //case "" :
-                   // setIcon(img_vide);
-                    //break;
-                //case"rouge" :
-                  //  setIcon(img_jetonRouge);
-                    //break;
-                //case "jaune" :
-                  //  setIcon(img_jetonJaune);
-                    //break ;
-            }
-        
+    
+    
+    
+    
+    Boule bouleAssociee;
+    
+    
     public CelluleGraphique (Boule uneBoule) {
         bouleAssociee = uneBoule ;
     }
+    
+    
+    @Override
+    public void paintComponent (Graphics G){
+        super.paintComponent(G);
+        
+        //String couleur_boule = bouleAssociee.Couleur;
+        String couleur_boule = "vide";
+            switch (couleur_boule){
+               case "vide":
+                    setIcon(bouleVide);
+                    break;
+                
+                case "Rose":
+                    setIcon(bouleRose);
+                    break;
+                case "Rouge":
+                    setIcon(bouleRouge);
+                    break;
+                case "Bleu" :
+                    setIcon(bouleBleu);
+                    break;
+                case "Jaune": 
+                    setIcon(bouleJaune);
+                    break;
+                case "Cyan" :
+                    setIcon(bouleCyan);
+                    break;
+                case "Vert" :
+                    setIcon(bouleVert);
+                    break;
+                    
+            }
+    }    
+        
+    
 }
