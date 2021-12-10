@@ -12,7 +12,7 @@ package mastermind_console_fourcade_legier;
 public class Boule {
    
     String Couleur;
-    
+    boolean presenceBoule;
     
     public Boule (String couleur){
         Couleur = couleur;
@@ -44,4 +44,11 @@ public class Boule {
         
         return Couleur;
     }
+    
+    boolean PresenceBoule(){
+        if (presenceBoule==true)return true;
+        return false;
+    }
+    
+    
 }

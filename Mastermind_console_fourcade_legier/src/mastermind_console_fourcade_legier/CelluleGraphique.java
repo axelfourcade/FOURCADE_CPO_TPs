@@ -43,6 +43,11 @@ public class CelluleGraphique extends JButton {
         
         //String couleur_boule = bouleAssociee.Couleur;
         String couleur_boule = "vide";
+        
+        //if(bouleAssociee.PresenceBoule() ==true){
+          //  couleur_boule=bouleAssociee.lireCouleur();
+        //}
+        
             switch (couleur_boule){
                case "vide":
                     setIcon(bouleVide);

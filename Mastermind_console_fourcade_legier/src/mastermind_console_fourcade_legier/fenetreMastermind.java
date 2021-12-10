@@ -91,7 +91,11 @@ public class fenetreMastermind extends javax.swing.JFrame {
         tabResultat[1]=couleur2;
         tabResultat[2]=couleur3;
         tabResultat[3]=couleur4;
-
+        
+       // grilleOrdi.BouleJeu[1][0]= bouleResultat1;
+        //grilleOrdi.BouleJeu[1][1]= bouleResultat2;
+        //grilleOrdi.BouleJeu[1][2]= bouleResultat3;
+        //grilleOrdi.BouleJeu[1][3]= bouleResultat4;
         
     }
     
