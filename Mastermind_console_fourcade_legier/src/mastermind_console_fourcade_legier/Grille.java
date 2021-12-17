@@ -10,12 +10,12 @@ package mastermind_console_fourcade_legier;
  */
 public class Grille {
     
-    Boule [][] BouleJeu = new Boule[10][4];
+    Boule [][] tabJeu = new Boule[12][4];
 
     public Grille() {
-        for (int i = 0; i <= 9; i++) {
+        for (int i = 0; i <= 11; i++) {
             for (int j = 0; j <= 3; j++) {
-                BouleJeu[i][j] = null;
+                tabJeu[i][j] = null;
             }
         }
     }

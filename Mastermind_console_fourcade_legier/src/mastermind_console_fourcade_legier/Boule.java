@@ -50,5 +50,4 @@ public class Boule {
         return false;
     }
     
-    
 }
