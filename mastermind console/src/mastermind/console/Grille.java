@@ -12,7 +12,9 @@ package mastermind.console;
 public class Grille {
     
     Cellule [][] tabJeu = new Cellule[12][4];
-
+    Cellule [] tabVerif = new Cellule [4];
+    combinaisonmystere Combinaison = new combinaisonmystere();
+    
     public Grille() {
         for (int i = 0; i <= 11; i++) {
             for (int j = 0; j <= 3; j++) {
@@ -59,6 +61,7 @@ public class Grille {
             }
         System.out.println("|");
         }
+        System.out.println("-------------");
     }
       
     
@@ -69,7 +72,19 @@ public class Grille {
         return tabJeu[ligne][colonne].bouleCourante.lireCouleur();
     }
     
-    public boolean etreGagnant(){
+    public boolean etreGagnant(int ligne){
+        
+        int i = 0 ;
+        
+        for (int j = 0; j <= 3; j++) {
+            tabVerif[j] = tabJeu[ligne][j];
+        }
+                
+        if(tabVerif[i].lireCouleurBoule()==Combinaison.tableauCombinaison[i].lireCouleur()){
+        }
+        
+        
+        
         return false;
     }
 }
