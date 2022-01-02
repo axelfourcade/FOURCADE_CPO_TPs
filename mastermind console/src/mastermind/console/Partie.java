@@ -28,11 +28,22 @@ public class Partie {
         
         int nb_boulemalplace = 0;
         int nb_bouleexact = 0;
-        
+        int nb_tentative = 0;
+        int [] tab = new int [2];
+                
         grillejeu.afficherGrilleSurConsole();
         
+        while (nb_bouleexact!=4 || nb_tentative <= 12){
+            
         
+            
+            
+            
+            tab = grillejeu.etreGagnant(nb_tentative);
+            nb_bouleexact = tab [0];
+            nb_boulemalplace = tab [1];
+            
+            nb_tentative += 1;
+        }
     }
-    
-    
 }

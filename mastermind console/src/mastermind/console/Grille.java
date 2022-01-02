@@ -72,19 +72,87 @@ public class Grille {
         return tabJeu[ligne][colonne].bouleCourante.lireCouleur();
     }
     
-    public boolean etreGagnant(int ligne){
+    
+    public int [] etreGagnant (int ligne){
         
-        int i = 0 ;
+        int cpt1 = 0;
+        int cpt2 = 0;
+        int [] tab = new int [2];
+        
+        for (int i = 0; i <= 3; i++) {
+            tabVerif[i] = tabJeu[ligne][i];
+        }
         
         for (int j = 0; j <= 3; j++) {
-            tabVerif[j] = tabJeu[ligne][j];
+            if(tabVerif[j].lireCouleurBoule()==Combinaison.tableauCombinaison[j].lireCouleur()){
+                cpt1 += 1;
+                tabVerif[j].bouleCourante=null;
+            }
         }
-                
-        if(tabVerif[i].lireCouleurBoule()==Combinaison.tableauCombinaison[i].lireCouleur()){
+        
+        if (tabVerif[0].bouleCourante!=null){
+            if(tabVerif[0].lireCouleurBoule()==Combinaison.tableauCombinaison[1].lireCouleur()){
+                cpt2 += 1;
+                tabVerif[0].bouleCourante=null;
+            }
+            else if (tabVerif[0].lireCouleurBoule()==Combinaison.tableauCombinaison[2].lireCouleur()){
+                cpt2 += 1;
+                tabVerif[0].bouleCourante=null;
+            }
+            else if (tabVerif[0].lireCouleurBoule()==Combinaison.tableauCombinaison[3].lireCouleur()){
+                cpt2 += 1;
+                tabVerif[0].bouleCourante=null;
+            }
+        }
+        if (tabVerif[1].bouleCourante!=null){
+            if(tabVerif[1].lireCouleurBoule()==Combinaison.tableauCombinaison[0].lireCouleur()){
+                cpt2 += 1;
+                tabVerif[1].bouleCourante=null;
+            }
+            else if (tabVerif[1].lireCouleurBoule()==Combinaison.tableauCombinaison[2].lireCouleur()){
+                cpt2 += 1;
+                tabVerif[1].bouleCourante=null;
+            }
+            else if (tabVerif[1].lireCouleurBoule()==Combinaison.tableauCombinaison[3].lireCouleur()){
+                cpt2 += 1;
+                tabVerif[1].bouleCourante=null;
+            }
+        }
+        if (tabVerif[2].bouleCourante!=null){
+            if(tabVerif[2].lireCouleurBoule()==Combinaison.tableauCombinaison[0].lireCouleur()){
+                cpt2 += 1;
+                tabVerif[2].bouleCourante=null;
+            }
+            else if (tabVerif[2].lireCouleurBoule()==Combinaison.tableauCombinaison[1].lireCouleur()){
+                cpt2 += 1;
+                tabVerif[2].bouleCourante=null;
+            }
+            else if (tabVerif[2].lireCouleurBoule()==Combinaison.tableauCombinaison[3].lireCouleur()){
+                cpt2 += 1;
+                tabVerif[2].bouleCourante=null;
+            }
+        }
+        if (tabVerif[3].bouleCourante!=null){
+            if(tabVerif[3].lireCouleurBoule()==Combinaison.tableauCombinaison[0].lireCouleur()){
+                cpt2 += 1;
+                tabVerif[3].bouleCourante=null;
+            }
+            else if (tabVerif[3].lireCouleurBoule()==Combinaison.tableauCombinaison[1].lireCouleur()){
+                cpt2 += 1;
+                tabVerif[3].bouleCourante=null;
+            }
+            else if (tabVerif[3].lireCouleurBoule()==Combinaison.tableauCombinaison[2].lireCouleur()){
+                cpt2 += 1;
+                tabVerif[3].bouleCourante=null;
+            }
         }
         
         
+        tab[0]=cpt1;
+        tab[1]=cpt2;
         
-        return false;
+        return tab;
+           
+    
     }
 }
