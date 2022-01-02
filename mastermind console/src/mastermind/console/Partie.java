@@ -16,12 +16,7 @@ public class Partie {
     Grille grillejeu = new Grille();
     
     public Partie(){
-        for (int i=0;i<=3;i++){
-            tableauOrdi[i]=null;
-        }
-        for (int i=0;i<=1;i++){
-            tableauRes[i]=0;
-        }
+    
         grillejeu.viderGrille();
     }
     
@@ -34,5 +29,11 @@ public class Partie {
             tableauOrdi[i].AffecterCouleur(var);
         }
     }
+    
+    public void debuterPartie(){
+        
+        grillejeu.afficherGrilleSurConsole();
+    }
+    
     
 }

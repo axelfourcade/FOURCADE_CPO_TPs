@@ -15,7 +15,10 @@ public class MastermindConsole {
      */
     public static void main(String[] args) {
        
-        
+    Partie partie = new Partie();
+
+    partie.initialiserPartie();
+    partie.debuterPartie();
         
         
     }

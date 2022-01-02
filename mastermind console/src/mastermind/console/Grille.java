@@ -11,12 +11,12 @@ package mastermind.console;
  */
 public class Grille {
     
-    Boule [][] tabJeu = new Boule[12][4];
+    Cellule [][] tabJeu = new Cellule[12][4];
 
     public Grille() {
         for (int i = 0; i <= 11; i++) {
             for (int j = 0; j <= 3; j++) {
-                tabJeu[i][j] = null;
+                tabJeu[i][j] = new Cellule ();
             }
         }
     }
@@ -24,12 +24,39 @@ public class Grille {
     public void viderGrille(){
         for(int i =0;i<=11;i++){
             for(int j =0;j<=3;j++){
-                tabJeu[i][j] = null;
+                tabJeu[i][j].bouleCourante = null;
             }
     }
     }
     
+    public void afficherGrilleSurConsole() {
+        
+        for (int i=0;i<=11;i++){
+            System.out.println("-------------");
+            System.out.println("|");
+            for(int j =0;j<= 3;j++){
+                if(tabJeu[i][j].bouleCourante == null){
+                    System.out.println("  |");
+                }
+                
+            }
+        }
+    }
     
     
     
+    
+    
+    
+    
+    public String lireCouleurBoule (int ligne , int colonne){
+        if (tabJeu[ligne][colonne].bouleCourante == null){
+            return "vide";
+        }
+        return tabJeu[ligne][colonne].bouleCourante.lireCouleur();
+    }
+    
+    public boolean etreGagnant(){
+        return false;
+    }
 }
