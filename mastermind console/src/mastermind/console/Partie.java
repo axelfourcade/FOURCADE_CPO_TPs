@@ -17,10 +17,12 @@ public class Partie {
     
     public Partie(){
     
-        grillejeu.viderGrille();
+        
     }
     
     public void initialiserPartie(){
+        
+        grillejeu.viderGrille();
         
         int var ;
         String couleur = null;
