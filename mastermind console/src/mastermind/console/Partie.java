@@ -13,11 +13,16 @@ public class Partie {
     
     Boule [] tableauOrdi = new Boule [4];
     int [] tableauRes = new int [2];
+    Grille grillejeu = new Grille();
     
     public Partie(){
         for (int i=0;i<=3;i++){
             tableauOrdi[i]=null;
         }
+        for (int i=0;i<=1;i++){
+            tableauRes[i]=0;
+        }
+        grillejeu.viderGrille();
     }
     
     public void initialiserPartie(){
@@ -26,7 +31,7 @@ public class Partie {
         
         for (int i=0;i<=3;i++){
             var = (int)(Math.random() * 6);
-            tableauOrdi[i]= Boule.affecter
+            tableauOrdi[i].AffecterCouleur(var);
         }
     }
     
