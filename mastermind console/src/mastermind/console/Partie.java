@@ -23,10 +23,21 @@ public class Partie {
     public void initialiserPartie(){
         
         int var ;
+        String couleur = null;
         
         for (int i=0;i<=3;i++){
             var = (int)(Math.random() * 6);
-            tableauOrdi[i].AffecterCouleur(var);
+            switch (var) {
+                case 1 -> couleur = "jaune";
+                case 2 -> couleur = "bleu";
+                case 3 -> couleur = "rouge";
+                case 4 -> couleur = "vert";
+                case 5 -> couleur = "rose";
+                case 6 -> couleur = "cyan";
+                default -> {
+                }
+            }
+            tableauOrdi[i] = new Boule(couleur);
         }
     }
     
