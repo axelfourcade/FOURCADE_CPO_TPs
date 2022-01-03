@@ -26,12 +26,7 @@ public class Cellule {
             return false;
         }
     }
-    
-    
-    public Boule recupererBoule(){
-    
-        return bouleCourante;
-    }
+
     
     public String lireCouleurBoule(){
         if (bouleCourante !=null){

@@ -195,4 +195,38 @@ public class Grille {
            
     
     }
+    
+    public void afficherGrilleSurConsoleVdifficile() {
+        
+        for (int i=0;i<=5;i++){
+            System.out.println("-------------");
+            
+            for(int j =0;j<= 3;j++){
+                if(tabJeu[i][j].bouleCourante == null){
+                    System.out.print("|  ");
+                }
+                else if ("rouge".equals(tabJeu[i][j].lireCouleurBoule())){
+                        System.out.print("| R");
+                }
+                else if ("jaune".equals(tabJeu[i][j].lireCouleurBoule())){
+                        System.out.print("| J");
+                }
+                else if ("bleu".equals(tabJeu[i][j].lireCouleurBoule())){
+                        System.out.print("| B");
+                }
+                else if ("vert".equals(tabJeu[i][j].lireCouleurBoule())){
+                        System.out.print("| V");
+                }
+                else if ("cyan".equals(tabJeu[i][j].lireCouleurBoule())){
+                        System.out.print("| C");
+                }
+                else if ("rose".equals(tabJeu[i][j].lireCouleurBoule())){
+                        System.out.print("| P");
+                }
+            }
+        System.out.println("|");
+        }
+        System.out.println("-------------");
+    }
+    
 }
