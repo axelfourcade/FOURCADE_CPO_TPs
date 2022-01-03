@@ -11,7 +11,7 @@ package mastermind_console_fourcade_legier;
  */
 public class Cellule {
     
-    Boule bouleCourante;
+    Boule bouleCourante;  
     
     public Cellule(){
         bouleCourante = null ;   

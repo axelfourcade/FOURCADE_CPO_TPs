@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class Grille {
     
-    Cellule [][] tabJeu = new Cellule[12][4];
+    Cellule [][] tabJeu = new Cellule[12][4];     //a la maniere du puissance 4, notre est composée de cellules dans laquelle on viendra ajouter des boules qui possèdent leur propre couleur
     Cellule [] tabVerif = new Cellule [4];        //on utilise un second tableau pour verifier la combinaison 
     combinaisonmystere Combinaison = new combinaisonmystere();
     
@@ -67,7 +67,7 @@ public class Grille {
             
             Boule boule = new Boule(couleur);
             tabJeu[ligne][i].affecterBoule(boule);
-            tabVerif[i].affecterBoule(boule);   //a chaque tour le tableau de verification prend la combinaison du joueur
+            tabVerif[i].affecterBoule(boule);   //a chaque tour le tableau de verification prend la combinaison du joueur, on lui ajoute egalement une nouvelle boule
         }
     }
     
