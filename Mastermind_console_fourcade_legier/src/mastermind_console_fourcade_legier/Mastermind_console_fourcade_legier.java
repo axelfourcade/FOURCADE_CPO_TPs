@@ -26,7 +26,7 @@ public class Mastermind_console_fourcade_legier {
         
         
     
-         new fenetreMastermind().setVisible(true);
+        //new fenetreMastermind().setVisible(true);
         //JFrame frame = new JFrame ("MASTERMIND");
         //frame.setPreferredSize(new Dimension(800,1200));
         //frame.pack();
