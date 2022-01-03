@@ -38,7 +38,7 @@ public class Partie {
         int [] tab = new int [2];
         int difficulte = 0;
 
-        System.out.println("Choisissez le niveau de difficulté :");
+        System.out.println("Choisissez le niveau de difficulté :");          //la grille utilisé sera la meme selon la difficulte, on affiche plus ou moins de ligne
         System.out.println("1) Mode normale en 12 essais\n2) Mode hardcore en 6 essais");
         difficulte = sc.nextInt();
 

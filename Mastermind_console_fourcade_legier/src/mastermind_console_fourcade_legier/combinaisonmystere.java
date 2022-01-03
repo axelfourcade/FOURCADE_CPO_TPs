@@ -11,7 +11,7 @@ package mastermind_console_fourcade_legier;
  */
 public class combinaisonmystere {
     
-    Boule [] tableauCombinaison = new Boule [4];
+    Boule [] tableauCombinaison = new Boule [4];  //on stock la combinaison mystere dans un tableau
     
     
     public combinaisonmystere(){
