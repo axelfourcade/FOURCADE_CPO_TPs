@@ -33,11 +33,9 @@ public class Partie {
                 
         grillejeu.afficherGrilleSurConsole();
         
-        while (nb_bouleexact!=4 || nb_tentative <= 12){
+        while (nb_bouleexact!=4 && nb_tentative <= 12){
             
             grillejeu.choisirCombinaison(nb_tentative);
-            
-            
             
             grillejeu.afficherGrilleSurConsole();
             
@@ -49,6 +47,12 @@ public class Partie {
             System.out.println("Vous avez " + nb_boulemalplace + " boules de la bonne couleur qui sont mal placées");
             
             nb_tentative += 1;
+        }
+        if (nb_bouleexact == 4 ){
+            System.out.println("Bravo !!!! Vous êtes parvenu à trouver la bonne combinason");
+        }
+        else {
+            System.out.println("C'est perdu ... Retentez votre chance une prochaine fois");
         }
     }
 }

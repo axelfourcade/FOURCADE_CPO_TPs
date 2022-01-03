@@ -23,6 +23,9 @@ public class Grille {
                 tabJeu[i][j] = new Cellule ();
             }
         }
+        for (int j=0;j<=3;j++){
+            tabVerif [j]= new Cellule();
+        }
     }
     
     public void viderGrille(){
@@ -30,6 +33,9 @@ public class Grille {
             for(int j =0;j<=3;j++){
                 tabJeu[i][j].bouleCourante = null;
             }
+        }
+        for (int j=0;j<=3;j++){
+            tabVerif [j].bouleCourante = null;
         }
     }
     
@@ -41,7 +47,9 @@ public class Grille {
         String couleur = null;
         
         for (int i=0;i<=3;i++){
-        
+            
+            
+            System.out.println(Combinaison.tableauCombinaison[i].Couleur);
             System.out.println("Veuillez choisir la couleur de la prochaine boule pour votre combinaison :");
             System.out.println("0) cyan\n1) jaune\n2) bleu\n3) rouge\n4) vert\n5) rose");
             choix = sc.nextInt();
@@ -56,8 +64,10 @@ public class Grille {
                 default -> {
                 }
             }
+            
             Boule boule = new Boule(couleur);
             tabJeu[ligne][i].affecterBoule(boule);
+            tabVerif[i].affecterBoule(boule);
         }
     }
     
@@ -108,10 +118,6 @@ public class Grille {
         int cpt1 = 0;
         int cpt2 = 0;
         int [] tab = new int [2];
-        
-        for (int i = 0; i <= 3; i++) {
-            tabVerif[i] = tabJeu[ligne][i];
-        }
         
         for (int j = 0; j <= 3; j++) {
             if(tabVerif[j].lireCouleurBoule()==Combinaison.tableauCombinaison[j].lireCouleur()){
@@ -177,6 +183,9 @@ public class Grille {
             }
         }
         
+        for (int i=0;i<=3;i++){
+            tabVerif[i].bouleCourante=null;
+        }
         
         tab[0]=cpt1;
         tab[1]=cpt2;
