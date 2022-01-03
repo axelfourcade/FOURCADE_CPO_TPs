@@ -27,6 +27,7 @@ public class Cellule {
         }
     }
     
+    
     public Boule recupererBoule(){
     
         return bouleCourante;

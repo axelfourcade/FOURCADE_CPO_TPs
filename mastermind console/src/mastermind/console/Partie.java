@@ -35,13 +35,18 @@ public class Partie {
         
         while (nb_bouleexact!=4 || nb_tentative <= 12){
             
-        
+            grillejeu.choisirCombinaison(nb_tentative);
             
             
+            
+            grillejeu.afficherGrilleSurConsole();
             
             tab = grillejeu.etreGagnant(nb_tentative);
             nb_bouleexact = tab [0];
             nb_boulemalplace = tab [1];
+            
+            System.out.println("Vous avez " + nb_bouleexact + " boules placées correctement");
+            System.out.println("Vous avez " + nb_boulemalplace + " boules de la bonne couleur qui sont mal placées");
             
             nb_tentative += 1;
         }

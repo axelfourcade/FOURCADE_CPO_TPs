@@ -1,5 +1,7 @@
 package mastermind.console;
 
+import java.util.Scanner;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -28,7 +30,35 @@ public class Grille {
             for(int j =0;j<=3;j++){
                 tabJeu[i][j].bouleCourante = null;
             }
+        }
     }
+    
+    public void choisirCombinaison(int ligne){
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int choix =-1;
+        String couleur = null;
+        
+        for (int i=0;i<=3;i++){
+        
+            System.out.println("Veuillez choisir la couleur de la prochaine boule pour votre combinaison :");
+            System.out.println("0) cyan\n1) jaune\n2) bleu\n3) rouge\n4) vert\n5) rose");
+            choix = sc.nextInt();
+            
+            switch (choix) {
+                case 1 -> couleur = "jaune";
+                case 2 -> couleur = "bleu";
+                case 3 -> couleur = "rouge";
+                case 4 -> couleur = "vert";
+                case 5 -> couleur = "rose";
+                case 0 -> couleur = "cyan";
+                default -> {
+                }
+            }
+            Boule boule = new Boule(couleur);
+            tabJeu[ligne][i].affecterBoule(boule);
+        }
     }
     
     public void afficherGrilleSurConsole() {
