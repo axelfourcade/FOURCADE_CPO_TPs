@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Grille {
     
     Cellule [][] tabJeu = new Cellule[12][4];
-    Cellule [] tabVerif = new Cellule [4];
+    Cellule [] tabVerif = new Cellule [4];        //on utilise un second tableau pour verifier la combinaison 
     combinaisonmystere Combinaison = new combinaisonmystere();
     
     public Grille() {
@@ -56,7 +56,7 @@ public class Grille {
             
             switch (choix) {
                 case 1 -> couleur = "jaune";
-                case 2 -> couleur = "bleu";
+                case 2 -> couleur = "bleu";    //selon le choix de couleur on creer une nouvelle boule que l'on place dans notre grille de jeu 
                 case 3 -> couleur = "rouge";
                 case 4 -> couleur = "vert";
                 case 5 -> couleur = "rose";
@@ -67,7 +67,7 @@ public class Grille {
             
             Boule boule = new Boule(couleur);
             tabJeu[ligne][i].affecterBoule(boule);
-            tabVerif[i].affecterBoule(boule);
+            tabVerif[i].affecterBoule(boule);   //a chaque tour le tableau de verification prend la combinaison du joueur
         }
     }
     
@@ -115,18 +115,18 @@ public class Grille {
     
     public int [] etreGagnant (int ligne){
         
-        int cpt1 = 0;
-        int cpt2 = 0;
+        int cpt1 = 0;  //ce compteur permet de savoir combien de boule sont exactement placées
+        int cpt2 = 0;  //celui ci compte le nombre de boule de la bonne couleur mal placées 
         int [] tab = new int [2];
         
-        for (int j = 0; j <= 3; j++) {
+        for (int j = 0; j <= 3; j++) {        //dans un premier temps on verifie les boules placées correctement 
             if(tabVerif[j].lireCouleurBoule()==Combinaison.tableauCombinaison[j].lireCouleur()){
                 cpt1 += 1;
-                tabVerif[j].bouleCourante=null;
+                tabVerif[j].bouleCourante=null;  //on supprime les boules correct pour ne pas les compter en double
             }
         }
         
-        if (tabVerif[0].bouleCourante!=null){
+        if (tabVerif[0].bouleCourante!=null){  //dans un second temps on verifie les boules mal placées qui sont de la bonne couleur
             if(tabVerif[0].lireCouleurBoule()==Combinaison.tableauCombinaison[1].lireCouleur()){
                 cpt2 += 1;
                 tabVerif[0].bouleCourante=null;
@@ -184,7 +184,7 @@ public class Grille {
         }
         
         for (int i=0;i<=3;i++){
-            tabVerif[i].bouleCourante=null;
+            tabVerif[i].bouleCourante=null;  //on vide le tableau de verification completement pour le reremplir avec la prochaine combinaison 
         }
         
         tab[0]=cpt1;
@@ -197,7 +197,7 @@ public class Grille {
     
     public void afficherGrilleSurConsoleVdifficile() {
         
-        for (int i=0;i<=5;i++){
+        for (int i=0;i<=5;i++){                    //dans le mode hardcore la grille est plus courte
             System.out.println("-------------");
             
             for(int j =0;j<= 3;j++){
