@@ -49,8 +49,9 @@ public class Grille {
         for (int i=0;i<=3;i++){
             
             
-            System.out.println(Combinaison.tableauCombinaison[i].Couleur);
+            //System.out.println(Combinaison.tableauCombinaison[i].Couleur);
             System.out.println("Veuillez choisir la couleur de la prochaine boule pour votre combinaison :");
+            System.out.println("Rappel : La combinaison est composée de 4 couleures DIFFERENTES");
             System.out.println("0) cyan\n1) jaune\n2) bleu\n3) rouge\n4) vert\n5) rose");
             choix = sc.nextInt();
             
