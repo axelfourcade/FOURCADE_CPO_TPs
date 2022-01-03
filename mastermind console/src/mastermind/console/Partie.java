@@ -33,7 +33,7 @@ public class Partie {
                 
         grillejeu.afficherGrilleSurConsole();
         
-        while (nb_bouleexact!=4 && nb_tentative <= 12){
+        while (nb_bouleexact!=4 && nb_tentative < 12){
             
             grillejeu.choisirCombinaison(nb_tentative);
             
